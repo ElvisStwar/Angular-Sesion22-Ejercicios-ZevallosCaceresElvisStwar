@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { ComponentsModule } from './components/components.module';
+import { PagesModule } from './pages/pages.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 var config = {
   apiKey: environment.firebase.apiKey,
@@ -23,6 +26,8 @@ var config = {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ComponentsModule,
+    PagesModule,
 
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth())
