@@ -1,4 +1,4 @@
-<div class="mt-5 mx-auto bg-body-tertiary border rounded-4" style="width: 350px;">
+<div class="mt-5 mx-auto  border rounded-4" style="width: 350px;">
     <div class="p-5">
         <h1 class="text-center">Regístrate</h1>
         <form [formGroup]="formRegister">
@@ -7,16 +7,19 @@
                     <label for="" class="">Correo</label>
                 </div>
                 <div>
-                    <input type="text" class="form-control" formControlName="email">
+                    <input type="text" class="form-control" formControlName="email" placeholder="Inserte su correo">
                 </div>
             </div>
-            <div class="mb-4">
+            <div class="mb-2">
                 <div class="mb-2">
                     <label for="" class="">Password</label>
                 </div>
                 <div>
-                    <input type="password" class="form-control" formControlName="password">
+                    <input type="password" class="form-control" formControlName="password" placeholder="Cree una contraseña">
                 </div>
+            </div>
+            <div class="mb-4">
+                <a routerLink="/login">Ya estoy registrado</a>
             </div>
             <div class="text-center">
                 <button class="btn btn-primary" (click)="onSubmit()">Registrar</button>
