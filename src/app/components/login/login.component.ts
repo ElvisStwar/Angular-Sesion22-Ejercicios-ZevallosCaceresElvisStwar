@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserServiceService } from 'src/app/service/user-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -36,11 +37,20 @@ export class LoginComponent implements OnInit{
       response => {
         console.log(response)
         this.router.navigate(["home"])
+        localStorage.setItem('status','logIn')
       }
 
     )
     .catch(
-      error => console.log(error)
+      error => {
+        console.log(error)
+        Swal.fire({
+          title: 'Upss :c ...',
+          icon: 'error',
+          text: 'Verifica si tus datos son correctos',
+          confirmButtonText: 'ok',
+        })
+      }
     )
   }
 }
