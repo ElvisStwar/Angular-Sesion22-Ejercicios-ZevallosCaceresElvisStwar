@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit{
 
   constructor(
 
-    private userservice:UserServiceService,
+    private userService:UserServiceService,
     private router:Router
   ){
 
@@ -33,13 +33,13 @@ export class RegisterComponent implements OnInit{
   onSubmit(){
     console.log(this.formRegister.value)
 
-    this.userservice.registerUser(this.formRegister.value)
+    this.userService.registerUser(this.formRegister.value)
     .then( response =>{
       console.log(response)
+      this.userService.logout()
       this.router.navigate(["login"])
     })
     .catch( error => console.log(error))
-
 
   }
 

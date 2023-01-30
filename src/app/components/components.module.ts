@@ -5,6 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RegisterProductosComponent } from './register-productos/register-productos.component';
+import { ListaComponent } from './lista/lista.component';
 
 
 
@@ -12,7 +14,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   declarations: [
     HeaderComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RegisterProductosComponent,
+    ListaComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +28,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   exports: [
     HeaderComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RegisterProductosComponent
   ]
 })
 export class ComponentsModule { }
