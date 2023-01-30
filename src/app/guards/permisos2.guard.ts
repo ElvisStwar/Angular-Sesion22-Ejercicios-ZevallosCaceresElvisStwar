@@ -7,7 +7,6 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class Permisos2Guard implements CanActivate {
-
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
