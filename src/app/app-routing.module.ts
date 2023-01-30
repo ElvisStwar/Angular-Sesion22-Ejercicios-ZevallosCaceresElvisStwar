@@ -4,12 +4,14 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { canActivate, redirectUnauthorizedTo, redirectLoggedInTo} from '@angular/fire/auth-guard'
+import { ListaComponent } from './components/lista/lista.component';
 
 const routes: Routes = [
 
   {path:"register", component:RegisterComponent, ...canActivate(()=> redirectLoggedInTo(["home"]))},
   {path:"login", component:LoginComponent,...canActivate(()=> redirectLoggedInTo(["home"]))},
   {path:"home", component:HomeComponent, ...canActivate(()=> redirectUnauthorizedTo(["login"]))},
+  {path:"lista", component:ListaComponent, ...canActivate(()=> redirectUnauthorizedTo(["login"]))},
   {path:"", pathMatch:"full", redirectTo:"login"}
 
 ];

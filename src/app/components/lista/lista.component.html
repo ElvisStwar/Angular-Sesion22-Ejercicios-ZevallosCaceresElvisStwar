@@ -1,1 +1,23 @@
-<p>lista works!</p>
+<div class="m-5 border rounded-4">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Imagen</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let producto of ferreteria">
+            <tr>
+                <td>{{producto.producto}}</td>
+                <td>{{producto.precio}}</td>
+                <td>
+                    <img src="{{producto.foto}}" alt="" height="100px" width="auto">
+                </td>
+                <td><button class="btn btn-danger" (click)="onClickDelete(producto)"><i class="bi bi-trash3-fill"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
